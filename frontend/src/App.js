@@ -9,6 +9,7 @@ import SignUp from "./user/screens/SignUp"
 import SignIn from "./user/screens/SignIn"
 import Navbar from "./cart/components/Navbar";
 import SellerHomeScreen from "./seller/screens/SellerHomeScreen";
+import DeliveryServiceScreen from "./delivery/screens/DeliveryServiceScreen"
 import PaymentScreen from "./payment/screens/PaymentScreen"
 
 function App() {
@@ -23,7 +24,8 @@ function App() {
               <Route exact path="/signin" component={SignIn}/>
               <Route exact path="/signup" component={SignUp}/>
               <Route exact path="/seller" component={SellerHomeScreen}/>
-              <Route exact path="/checkout" component={PaymentScreen}/>
+              <Route exact path="/checkout" component={DeliveryServiceScreen}/>
+              <Route exact path="/payment" component={PaymentScreen}/>
           </Switch>
         </main>
       </Router>
