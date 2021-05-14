@@ -19,7 +19,11 @@ const HomeScreen = () =>{
             <h2 className="mainTitle">Latest Products</h2>
             <div className="homeScreenProducts">
                 {loading ? (
-                    <h2>Loading...</h2>
+                    <div className="overlay">
+                        <h1 className="txt-main">Please wait</h1>
+                        <img className="loadingImg" src="/gif/spinner-green.gif" alt="inner" />
+                        <h1 className= "txt-main">Loading...</h1>
+                    </div>
                 ) : error ? (
                     <h2>{error}</h2>
                 ) : (
