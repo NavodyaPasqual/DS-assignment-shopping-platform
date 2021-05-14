@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const CartItems = ({item, qtyChangeHandler,removeHandler}) =>{
     return (
-        <div className="cartitem">
+        <div className="cartItem">
             <div className="cartItemImage">
-                <img src= {item.image} alt={item.name} />
+                <Link to={`/product/${item.product}`}><img src= {item.image} alt={item.name} /></Link>
             </div>
             <Link to={`/product/${item.product}`} className="cartItemsName">
                 <p>{item.name}</p>

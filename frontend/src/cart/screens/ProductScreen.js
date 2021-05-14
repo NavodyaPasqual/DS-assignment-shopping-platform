@@ -37,8 +37,8 @@ const ProductScreen = ({match, history}) =>{
                         </div>
                         <div className="leftInfo">
                             <p className="leftName">{product.name}</p>
-                            <p>Price: ${product.price}</p>
-                            <p>Description: {product.description}</p>
+                            <p className="leftPrice">Price: ${product.price}</p>
+                            <p className="leftDescription">Description: <br/><br/>{product.description}</p>
                         </div>
                     </div>
                     <div className="productScreenRight">
