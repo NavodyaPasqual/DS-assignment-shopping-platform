@@ -3,17 +3,17 @@ require("dotenv").config();
 
 const connectMongoDB = require("./config/db");
 //import models and data
-const productData = require("./data/product");
-const productModel = require("./models/productModel");
+const productData = require("./data/products");
+const Product = require("./models/productModel");
 
 connectMongoDB();
 
 //delete everything in db and insert
 const importDataDB = async () => {
     try {
-        await productModel.deleteMany({});
+        await Product.deleteMany({});
 
-        await productModel.insertMany(productData);
+        await Product.insertMany(productData);
 
         console.log("Product Data Import Success");
 

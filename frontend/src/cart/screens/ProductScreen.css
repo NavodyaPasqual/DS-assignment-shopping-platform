@@ -1,0 +1,101 @@
+.productScreen {
+    max-width: 1300px;
+    margin: 1rem auto;
+    display: flex;
+}
+
+.productScreenLeft {
+    display: flex;
+    flex: 0.8;
+}
+
+.leftImage {
+    margin: 1rem;
+    flex: 0.6;
+}
+
+.leftInfo {
+    margin: 1rem;
+    flex: 0.4;
+    background: #fff;
+    height: fit-content;
+    font-size: 0.9rem;
+}
+
+.leftName {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.leftInfo > p,
+.rightInfo > p {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.leftInfo > p:last-child,
+.rightInfo > p:last-child {
+    border: none;
+}
+
+.productScreenRight {
+    flex: 0.2;
+}
+
+.rightInfo {
+    width: 250px;
+    margin: 1rem;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.productScreenRight p {
+    padding: 1rem;
+    font-size: 0.8rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.rightInfo p > button {
+    grid-column: 1/-1;
+    width: 100%;
+    padding: 10px 16px;
+    background: #171717;
+    color: #f4f4f4;
+    border: 1px solid #171717;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.rightInfo select {
+    padding: 10px 16px;
+}
+
+@media (max-width: 960px) {
+    .productScreen {
+        flex-direction: column;
+    }
+
+    .productScreenLeft {
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .leftImage {
+        flex: 1;
+    }
+
+    .leftInfo {
+        flex: 1;
+    }
+
+    .productScreenRight {
+        flex: 1;
+        padding: 1rem;
+    }
+
+    .rightInfo {
+        width: 100%;
+        margin: 0;
+    }
+}
