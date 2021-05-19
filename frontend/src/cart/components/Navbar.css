@@ -54,11 +54,33 @@
     align-items: center;
 }
 
+.nav_links > li > div > a:hover {
+    color: black;
+}
+
+.nav_links > li > div > a {
+    text-decoration: none;
+    color: #706f6f;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
 .nav_links > li > a:hover {
     color: black;
 }
 
 .nav_links > li > a > span {
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+}
+
+.nav_links > li > div > a:hover {
+    color: black;
+}
+
+.nav_links > li > div > a > span {
     display: flex;
     align-items: center;
     margin-left: 8px;
@@ -99,4 +121,20 @@
     .nav_Logo h2 {
         font-size: 1rem;
     }
+}
+.nav-btn{
+    margin: 5px;
+    padding: 5px;
+    background-color: #45a28d;
+    border: 0px;
+    border-radius: 3px;
+    width: 80px;
+    height: 30px;
+}
+.nav-btn > a{
+    text-decoration: none;
+    color: #ffffff;
+}
+.nav-btn:hover{
+    border-bottom: #dd219e 3px solid;
 }

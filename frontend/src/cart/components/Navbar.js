@@ -5,7 +5,7 @@ import {useSelector} from "react-redux";
 const Navbar = () =>{
     const cart = useSelector(state => state.cart);
     const {cartItems} = cart;
-
+    const user= null;
     const getCartCount = () => {
         return cartItems.reduce((qty,item) => qty = Number(item.qty) + qty,0);
     }
@@ -18,12 +18,22 @@ const Navbar = () =>{
 
             <ul className="nav_links">
 
-                <li>
-                    <Link to="/signin">Sign in</Link>
-                </li>
-                <li>
-                    <Link to="/signup">Sign up</Link>
-                </li>
+                {user?(
+                    <li>
+                        <div to="/signin">User</div>
+                    </li>
+                ):(
+                    <div>
+                        <button className="nav-btn">
+                            <Link to="/signin">Sign in</Link>
+                        </button>
+                         <button className="nav-btn">
+                            <Link to="/signup">Sign up</Link>
+                        </button>
+                    </div>
+                )}
+
+
                 <li>
                     <Link to="/seller">Sellers</Link>
                 </li>

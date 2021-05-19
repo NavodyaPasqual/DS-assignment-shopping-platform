@@ -25,18 +25,26 @@
 .login-btn{
     cursor: pointer;
     border-radius: 15px;
+
 }
 .login-btn:hover{
     color: #45a28d;
     background-color: #ffffff;
     border: 0px;
-    box-shadow: 2px 2px #959595 ;
-    transition: background-color 2s ease-out;
+    transition: background-color 1s ease-out;
 }
 .login-reg-btn{
+    margin: 10px 0;
+    padding: 10px 20px 10px 20px;
     color: #45a28d;
     background-color: #ffffff;
-
+    border-radius:10px;
+}
+.login-reg-btn:hover{
+    color: #ffffff;
+    background-color: #45a28d;
+    border: 0px;
+    transition: background-color 1s ease-out;
 }
 .login-page form .row{
     display: flex;

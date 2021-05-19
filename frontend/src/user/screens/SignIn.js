@@ -7,7 +7,10 @@ const SignIn = () =>{
             <div className="login-image"></div>
             <form >
                 <h2>Login</h2>
-
+                <select className="user-select" name="userType">
+                    <option value="customer">Customer</option>
+                    <option value="seller">Seller</option>
+                </select>
                 <input type="email" name="email" required
                        placeholder="Email" />
 
@@ -16,7 +19,7 @@ const SignIn = () =>{
 
                 <div className="row">
                     <button className="login-btn" type="submit">Login</button>
-                    <Link to="/signup">Register</Link>
+                    <Link className="login-reg-btn" to="/signup">Register</Link>
                 </div>
             </form>
         </div>
