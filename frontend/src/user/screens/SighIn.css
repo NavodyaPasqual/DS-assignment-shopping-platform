@@ -1,14 +1,17 @@
 .login-page{
-    max-width: 500px;
+    max-width: 800px;
     border: 2px solid #45a28d;
     border-radius: 5px;
     padding: 30px;
     margin: 50px auto;
+    display: flex;
 }
 .login-page h2{
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #555;
+    text-align: center;
+    margin-bottom: 10px;
 }
 .login-page form input,
 .login-page form button{
@@ -18,6 +21,22 @@
     padding: 0 5px;
     outline: #45a28d;
     border: 1px solid #45a28d;
+}
+.login-btn{
+    cursor: pointer;
+    border-radius: 15px;
+}
+.login-btn:hover{
+    color: #45a28d;
+    background-color: #ffffff;
+    border: 0px;
+    box-shadow: 2px 2px #959595 ;
+    transition: background-color 2s ease-out;
+}
+.login-reg-btn{
+    color: #45a28d;
+    background-color: #ffffff;
+
 }
 .login-page form .row{
     display: flex;
@@ -36,4 +55,14 @@
     text-decoration: none;
     letter-spacing: 1.3px;
     text-transform: uppercase;
+}
+.login-image{
+    background-image: url("login.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 500px;
+    height: 350px;
+
+
 }

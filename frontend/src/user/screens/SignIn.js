@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 const SignIn = () =>{
     return (
         <div className="login-page">
+            <div className="login-image"></div>
             <form >
                 <h2>Login</h2>
 
@@ -14,7 +15,7 @@ const SignIn = () =>{
                        placeholder="Password" />
 
                 <div className="row">
-                    <button type="submit">Login</button>
+                    <button className="login-btn" type="submit">Login</button>
                     <Link to="/signup">Register</Link>
                 </div>
             </form>
