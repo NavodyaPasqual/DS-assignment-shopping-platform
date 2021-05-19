@@ -138,3 +138,28 @@
 .nav-btn:hover{
     border-bottom: #dd219e 3px solid;
 }
+.avartar{
+    background-color: #dd219e;
+    border-radius: 50px;
+    height: 40px;
+    padding: 10px 12px 8px 15px;
+    width: 40px;
+    text-transform: capitalize;
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 2px 2px #706f6f;
+    box-shadow: 2px 2px 5px 1px  #706f6f;
+    margin-left: 5px;
+}
+.userPro{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: #388674 1px solid;
+    border-radius: 25px;
+    padding-left: 7px;
+    padding-right: 0px;
+}
+.userPro > a{
+    text-decoration: none;
+}

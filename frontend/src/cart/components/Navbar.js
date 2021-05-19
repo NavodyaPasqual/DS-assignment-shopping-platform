@@ -19,9 +19,10 @@ const Navbar = () =>{
             <ul className="nav_links">
 
                 {user?(
-                    <li>
-                        <div to="/signin">User</div>
-                    </li>
+                    <div className="userPro">
+                        <Link to="/signin">{user}</Link>
+                       <div className="avartar">{user.charAt(0)}</div>
+                    </div>
                 ):(
                     <div>
                         <button className="nav-btn">
