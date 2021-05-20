@@ -44,7 +44,7 @@ const SignIn = () =>{
     }
 
     return (
-        <Container component="main" className="container"   maxWidth="xs">
+        <Container component="main" className="container"   maxWidth="md">
 
                 <Paper className={classes.paper} maxWidth="xs" elevation={3}>
 

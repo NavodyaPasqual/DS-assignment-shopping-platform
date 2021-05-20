@@ -3,7 +3,7 @@ import {borderRadius} from "@material-ui/system";
 
 export default makeStyles((theme) => ({
     paper: {
-        padding:'30px',
+        padding:'30px 150px 30px 150px',
         marginTop: theme.spacing(8),
         display: 'flex',
         flexDirection: 'column',

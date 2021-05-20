@@ -5,6 +5,7 @@
     background-size: contain;
     width: 500px;
     height: 350px;
+    margin-top: 125px;
 }
 .container > h2{
     text-transform: uppercase;
