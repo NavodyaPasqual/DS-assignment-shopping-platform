@@ -96,11 +96,15 @@
     border-radius: 8px;
     position: relative;
     margin-right: 20px;
+    margin-left: 20px;
+    width: 50px;
 }
-
-.cart_Link:hover {
-    color: #f4f4f4;
+.cart_Link:hover{
     background-color: #551a8b;
+    transition: color 2s ease-out;
+}
+.cart_Link a:hover {
+    color: #f4f4f4;
 
 }
 
@@ -128,13 +132,12 @@
     }
 }
 .nav-btn{
-    margin: 5px;
-    padding: 5px;
+    padding: 15px;
     background-color: #45a28d;
     border: 0px;
     border-radius: 3px;
-    width: 80px;
-    height: 30px;
+    width: 100px;
+    height: 45px;
 }
 .nav-btn > a{
     text-decoration: none;

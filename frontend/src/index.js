@@ -8,6 +8,7 @@ import { Provider } from 'react-redux'
 import store from "./cart/functions/store"
 import auth from"./user/reducers/auth";
 
+
 ReactDOM.render(
     <Provider store={store}>
         <React.StrictMode>

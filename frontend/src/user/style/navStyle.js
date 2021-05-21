@@ -30,8 +30,17 @@ export default makeStyles((theme) => ({
     userName: {
         display: 'flex',
         alignItems: 'center',
+        justifyContent:'center',
         margin:'0px 10px 0px 10px',
-        color:'#fff',
+        color:'#242321',
+    },
+    logout:{
+        fontSize:'12px',
+        fontWeight:'bold',
+        color:'#662b2b',
+        width:'50px',
+        margin:'0px 10px 0px 0px',
+        padding:'0px 10px 0px 10px',
     },
     brandContainer: {
         display: 'flex',
@@ -39,5 +48,18 @@ export default makeStyles((theme) => ({
     },
     purple: {
         backgroundColor:"#309399",
+    },
+    navBtn:{
+        fontSize:'12px',
+        fontWeight:'bold',
+        color:'#309298',
+        width:'50px',
+        margin:'0px 10px 0px 0px',
+        padding:'9px 10px 10px 10px',
+    },
+    navLogin:{
+        backgroundColor:'FF309298',
+        color:'#619484',
+        textShadow:'1px 1px 6px #AAFFAA'
     },
 }));

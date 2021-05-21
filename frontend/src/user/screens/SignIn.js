@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 import "../style/userStyle.css"
 import InputField from "../components/InputField";
 import {Avatar ,Button,Paper,Select,IconButton,Grid,Typography,InputAdornment,Container,TextField} from "@material-ui/core";
@@ -8,21 +8,32 @@ import AuthStyle from "../style/AuthStyle";
 import {GoogleLogin} from "react-google-login";
 import Icon from "../style/icon"
 import {useDispatch} from "react-redux";
+import {signin,signup} from "../action/auth.js";
+import authReducer from "../reducers/auth";
 
-
+const initialState ={type:'',firstName:'',lastName:'',email:'',password:'',conPass:''}
+const initialAuthState ={state:'',action:''}
 const SignIn = () =>{
     const classes = AuthStyle();
     const [showPassword,setShowpassword]= useState(false);
     const [isSignUp,setSignUp] =useState(false)
+    const [formData,setFormData]=useState(initialState);
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const handleShowPass =()=> setShowpassword((prevShowPass) =>!prevShowPass);
 
-    const onSubmit=() =>{
-
+    const onSubmit=(e) =>{
+        e.preventDefault();
+        console.log(formData);
+        if(isSignUp){
+            dispatch(signup(formData,history))
+        }else{
+            dispatch(signin(formData,history))
+        }
     }
-    const onchange =()=>{
-
+    const onchange =(e)=>{
+        setFormData({...formData,[e.target.name]:e.target.value});
     }
     const swichText =()=>{
         setSignUp((prvIsSignUp)=>!prvIsSignUp);
@@ -33,7 +44,12 @@ const SignIn = () =>{
         const result = res?.profileObj;
         const token= res?.tokenId;
         try{
+            console.log(result);
+            console.log(token);
+           const auth=authReducer({type:'AUTH',data:{result,token}});
+           console.log(auth);
             dispatch({type:'AUTH',data:{result,token}});
+            history.push('/')
         }catch (e) {
             console.log(e);
         }
@@ -56,7 +72,7 @@ const SignIn = () =>{
                      </div>
                     <form className={classes.form} onSubmit={onSubmit}>
                         <label className="user-label">Select user type:</label>
-                        <Select name="type" className="user-select" autoFocus>
+                        <Select name="type" className="user-select" autoFocus required onChange={onchange}>
                             <option value="customer">Customer</option>
                             <option value="seller">Seller</option>
                         </Select>
@@ -64,14 +80,14 @@ const SignIn = () =>{
                             {
                                 isSignUp &&(
                                     <>
-                                            <InputField  name= "Firstname" label="First Name" onChange={onchange} autoFocus xs={6}/>
-                                            <InputField   name= "Lastname" label="Last Name" onChange={onchange}  xs={6}/>
+                                            <InputField  name= "firstName" label="First Name" handleOnchange={onchange} autoFocus xs={6}/>
+                                            <InputField   name= "lastName" label="Last Name" handleOnchange={onchange}  xs={6}/>
                                     </>
                                 )}
                             <InputField  name="email" label="E-mail" handleOnchange={onchange} type="email"  />
                             <InputField  name="password" label="Password" handleOnchange={onchange} type={showPassword ? "text" : "password" } handleShowPass={handleShowPass}/>
                             {
-                                isSignUp &&<InputField name="confirmpass" label="Confirm password" handleOnchange={onchange} type="password"/>
+                                isSignUp &&<InputField name="conPass" label="Confirm password" handleOnchange={onchange} type="password"/>
                             }
                         </Grid>
 

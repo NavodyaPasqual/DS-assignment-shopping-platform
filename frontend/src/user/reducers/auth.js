@@ -1,16 +1,19 @@
 import {AUTH,LOG_OUT} from '../Constants/userConst';
 
-const authReducer=(state ={authData:null},action)=>{
-    switch (action.type) {
-        case AUTH:
-            console.log(action?.data);
-            localStorage.setItem('UserProfile',JSON.stringify({...action?.data}))
+export const authReducer=(state={authData:null},action)=>{
 
-            return {...state,authData:action?.data};
-            
+    switch (state.type) {
+        case "AUTH":
+            console.log(state?.data);
+            localStorage.setItem('UserProfile',JSON.stringify({...state?.data}));
+            return {...state,authData:state?.data};
+        case "LOGOUT":
+            localStorage.clear();
+            return {...state,authData:null};
         default:
             return state;
     }
 };
+
 
 export default authReducer;
