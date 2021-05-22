@@ -8,11 +8,11 @@ import AuthStyle from "../style/AuthStyle";
 import {GoogleLogin} from "react-google-login";
 import Icon from "../style/icon"
 import {useDispatch} from "react-redux";
-import {signin,signup} from "../action/auth.js";
+import {singIn,singUp} from "../action/auth.js";
 import authReducer from "../reducers/auth";
 
 const initialState ={type:'',firstName:'',lastName:'',email:'',password:'',conPass:''}
-const initialAuthState ={state:'',action:''}
+
 const SignIn = () =>{
     const classes = AuthStyle();
     const [showPassword,setShowpassword]= useState(false);
@@ -27,9 +27,9 @@ const SignIn = () =>{
         e.preventDefault();
         console.log(formData);
         if(isSignUp){
-            dispatch(signup(formData,history))
+            dispatch(singUp(formData,history))
         }else{
-            dispatch(signin(formData,history))
+            dispatch(singIn(formData,history))
         }
     }
     const onchange =(e)=>{
@@ -37,7 +37,7 @@ const SignIn = () =>{
     }
     const swichText =()=>{
         setSignUp((prvIsSignUp)=>!prvIsSignUp);
-        handleShowPass(false);
+        setShowpassword(false);
     }
 
     const googleSuccess = async (res)=>{

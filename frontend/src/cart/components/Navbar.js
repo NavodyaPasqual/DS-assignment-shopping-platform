@@ -13,15 +13,17 @@ const Navbar = () =>{   const cart = useSelector(state => state.cart);
     const dispatch = useDispatch();
     const history = useHistory();
     const location = useLocation();
-    const localUser = JSON.parse(localStorage.getItem('UserProfile')) || {};
+    const localUser = JSON.parse(localStorage.getItem('UserProfile')) || null;
     let [user,setUser] = useState(localUser);
 
 
     useEffect(()=>{
+        const token = user?.token;
         setUser(JSON.parse(localStorage.getItem('UserProfile')));
+        console.log("data " +user);
 
     },[location]);
-    console.log("data " +user);
+
     const getCartCount = () => {
         return cartItems.reduce((qty,item) => qty = Number(item.qty) + qty,0);
     }
@@ -29,6 +31,7 @@ const Navbar = () =>{   const cart = useSelector(state => state.cart);
     const logOut=()=>{
         authReducer({type:'LOGOUT'});
         history.push('/signin');
+        setUser(null);
     }
     return (
         <AppBar className={classes.appBar} color="inherit">
@@ -39,31 +42,38 @@ const Navbar = () =>{   const cart = useSelector(state => state.cart);
 
                 <Toolbar className={classes.toolbar}>
 
-                            {user?(
 
-                                 <div className={classes.profile}>
-                                     <Avatar className={classes.purple} alt={user.result.givenName} src={user.result.imageURL}>{user.result.name.charAt(0)}</Avatar>
-                                     <Typography className={classes.userName} variant="h8"> {user.result.name}</Typography>
-                                     <Button component={Link} to="/seller" className={classes.navBtn}>
-                                         Sellers
-                                     </Button>
-                                    <div className="cart_Link">
-                                         <Link to="/cart" >
-                                             <i className="fas fa-shopping-cart"> </i>
-                                             <span className="cartLogo_Batch">{getCartCount()}</span>
-                                         </Link>
-                                     </div>
-                                     <Button  className={classes.logout} onClick={logOut}><i className="fas fa-power-off"> </i></Button>
-                                 </div>
 
-                            ):(
-                                <div>
-                                    <Button component={Link} to="/signin" className={classes.navLogin} variant="contained"  >
-                                        Sign in
-                                    </Button>
-                                </div>
-                            )}
+                    {user?(
+                            <div className={classes.profile}>
+                                <Button component={Link} to="/" className={classes.navBtn}>
+                                    Home
+                                </Button>
+                                <Button component={Link} to="/seller" className={classes.navBtn}>
+                                    Sellers
+                                </Button>
+                                  <Avatar className={classes.purple} alt={user.result.name} src={user.result.imageUrl}></Avatar>
+                                <Typography className={classes.userName} variant="h8"> {user.result.name}</Typography>
+                               <div className="cart_Link">
+                                <Link to="/cart" >
+                                    <i className="fas fa-shopping-cart"> </i>
+                                    <span className="cartLogo_Batch">{getCartCount()}</span>
+                                </Link>
+                            </div>
+                            <Button  className={classes.logout} onClick={logOut}><i className="fas fa-power-off"> </i></Button>
 
+                        </div>
+                    ):(
+
+                        <div>
+                            <Button component={Link} to="/" className={classes.navBtn}>
+                                Home
+                            </Button>
+                            <Button component={Link} to="/signin" className={classes.navLogin} variant="contained"  >
+                                 Sign in
+                            </Button>
+                        </div>
+                        )}
 
 
 
