@@ -13,8 +13,6 @@ connectMongoDB();
 const importDataDB = async () => {
     try {
 
-        //await Item.deleteMany({});
-
         await Product.deleteMany({});
         await Product.insertMany(productData);
 
