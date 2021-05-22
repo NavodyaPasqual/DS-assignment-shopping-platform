@@ -1,6 +1,7 @@
 import './Navbar.css';
-import {Link} from 'react-router-dom'
+import {Link, Route} from 'react-router-dom'
 import {useSelector} from "react-redux";
+import Search from '../components/Search'
 
 const Navbar = () =>{
     const cart = useSelector(state => state.cart);
@@ -15,7 +16,14 @@ const Navbar = () =>{
             <ul className="nav_Logo">
                 <li><Link to="/">Shopping Platform</Link></li>
             </ul>
-
+            <ul className="search">
+                <li>
+                    <Route render={({ history }) => (
+                        <Search history={history}></Search>
+                    )}
+                    ></Route>
+                </li>
+            </ul>
             <ul className="nav_links">
 
                 <li>

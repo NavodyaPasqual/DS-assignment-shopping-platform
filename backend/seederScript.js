@@ -6,13 +6,16 @@ const connectMongoDB = require("./config/db");
 const productData = require("./data/products");
 const Product = require("./models/productModel");
 
+
 connectMongoDB();
 
 //delete everything in db and insert
 const importDataDB = async () => {
     try {
-        await Product.deleteMany({});
 
+        //await Item.deleteMany({});
+
+        await Product.deleteMany({});
         await Product.insertMany(productData);
 
         console.log("Product Data Import Success");
