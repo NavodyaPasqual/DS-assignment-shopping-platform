@@ -1,0 +1,44 @@
+.FormGroupCus {
+    margin: 0 15px 20px;
+    border-radius: 4px;
+    padding: 0;
+    background-color: #000000;
+    will-change: opacity, transform;
+    box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08), inset 0 1px 0 #829fff;
+
+}
+
+.FormRowCus {
+    display: -ms-flexbox;
+    margin-left: 14px;
+    display: flex;
+    align-items: center;
+    -ms-flex-align: center;
+    border-top: 1px solid #819efc;
+}
+
+.StripeElement--webkit-autofill {
+    background: transparent !important;
+}
+
+.StripeElement {
+    width: 100%;
+    padding: 11px 15px 11px 0;
+}
+
+.carddd {
+    border: 0.1rem #c0c0c0 solid;
+    background-color: #f8f8f8;
+    width: 26rem;
+    border-radius: 0.5rem;
+    margin-left: 32rem;
+    margin-top: 5rem;
+    text-align: center;
+
+}
+.carddd-body {
+    padding: 1rem;
+}
+.carddd-body > * {
+    margin-bottom: 0.5rem;
+}
