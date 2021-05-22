@@ -1,5 +1,6 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+require("dotenv").config();
 
 const  auth = async (req ,res,next)=>{
 
@@ -10,7 +11,7 @@ const  auth = async (req ,res,next)=>{
         let decodeData;
 
         if(token && authonthicate){
-            decodeData = jwt.verify(token,'test');
+            decodeData = jwt.verify(token,process.env.USERSTRING);
             req.userId = decodeData?.id;
         }else{
             decodeData = jwt.decode(token);

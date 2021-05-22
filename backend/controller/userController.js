@@ -13,7 +13,7 @@ const signin =async (req,res)=>{
         const isPassCorrect = await  bcrypt.compare(password,getUser.password);
         if(!isPassCorrect) return res.status(404).json({message:"Invalid password"});
 
-        const token = jwt.sign({email: getUser.email,id:getUser.id},'test',{expiresIn:'1h'});
+        const token = jwt.sign({email: getUser.email,id:getUser.id},process.env.USERSTRING,{expiresIn:'1h'});
 
         res.status(200).json({result:getUser,token:token});
 
@@ -36,7 +36,7 @@ const signup =async (req,res)=>{
         const hashpassword  = await  bcrypt.hash(password,12);
         const result = await User.create({email,password:hashpassword,name:name,type:type });
         console.log("user : " +email + password + conPass + firstName + lastName +type);
-        const token = jwt.sign({email: result.email,id:result.id},'test',{expiresIn:'1h'});
+        const token = jwt.sign({email: result.email,id:result.id},process.env.USERSTRING,{expiresIn:'1h'});
         res.status(200).json({result,token});
 
     }catch (e) {
