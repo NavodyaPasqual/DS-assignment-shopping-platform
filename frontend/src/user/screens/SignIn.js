@@ -27,9 +27,9 @@ const SignIn = () =>{
         e.preventDefault();
         console.log(formData);
         if(isSignUp){
-            dispatch(singUp(formData,history))
+            dispatch(singUp(formData,history));
         }else{
-            dispatch(singIn(formData,history))
+            dispatch(singIn(formData,history));
         }
     }
     const onchange =(e)=>{
@@ -41,13 +41,26 @@ const SignIn = () =>{
     }
 
     const googleSuccess = async (res)=>{
+
         const result = res?.profileObj;
         const token= res?.tokenId;
         try{
             console.log(result);
             console.log(token);
            const auth=authReducer({type:'AUTH',data:{result,token}});
-           console.log(auth);
+            const user = [
+                {
+                    type:"customer",
+                    firstName:result.givenName,
+                    lastName:result.familyName,
+                    email:result.email,
+                    password:"user",
+                    conPass:"user",
+                }
+            ];
+            console.log("auth "+ user);
+
+            dispatch(singUp(user,history));
             dispatch({type:'AUTH',data:{result,token}});
             history.push('/')
         }catch (e) {

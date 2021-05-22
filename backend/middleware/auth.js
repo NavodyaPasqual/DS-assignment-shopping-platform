@@ -1,4 +1,5 @@
-import bcrypt from 'bcryptjs';
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 const  auth = async (req ,res,next)=>{
 

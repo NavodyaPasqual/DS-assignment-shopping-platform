@@ -1,14 +1,19 @@
 require("dotenv").config();
 const express = require("express");
 const connectDB = require("./config/db");
-
-//import routes
-const productRoute = require("./routes/productRoute");
-const userRouter = require('./routes/userRoutes');
+const cors = require('cors');
+var corsOp= {};
 
 connectDB();
 const app = express();
 app.use(express.json());
+
+app.use(cors(corsOp));
+//impdasdort routes
+const productRoute = require("./routes/productRoute");
+const userRouter = require('./routes/userRoutes');
+
+
 
 app.get("/", (req, res) => {
     res.json({ message: "API running..." });
