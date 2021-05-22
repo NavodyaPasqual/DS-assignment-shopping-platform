@@ -1,7 +1,6 @@
-export const FETCH_ALL = "FETCH_ALL";
-export const CREATE = "CREATE";
-export const UPDATE = "UPDATE";
-export const DELETE = "DELETE";
-export const LIKE = "LIKE";
+/**
+ * user constants
+ * @type {string}
+ */
 export const AUTH = "AUTH";
 export const LOG_OUT = "LOGOUT";

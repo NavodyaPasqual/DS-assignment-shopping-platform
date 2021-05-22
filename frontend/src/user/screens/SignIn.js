@@ -11,10 +11,18 @@ import {useDispatch} from "react-redux";
 import {singIn,singUp} from "../action/auth.js";
 import authReducer from "../reducers/auth";
 
-const initialState ={type:'',firstName:'',lastName:'',email:'',password:'',conPass:''}
+const initialState ={type:'',firstName:'',lastName:'',email:'',password:'',conPass:''};
 
+
+/**
+ * sign in and sign up component
+ * @returns {*}
+ * @constructor
+ */
 const SignIn = () =>{
+    //style
     const classes = AuthStyle();
+    //states
     const [showPassword,setShowpassword]= useState(false);
     const [isSignUp,setSignUp] =useState(false)
     const [formData,setFormData]=useState(initialState);
@@ -23,6 +31,10 @@ const SignIn = () =>{
 
     const handleShowPass =()=> setShowpassword((prevShowPass) =>!prevShowPass);
 
+    /**
+     * form submit
+     * @param e
+     */
     const onSubmit=(e) =>{
         e.preventDefault();
         console.log(formData);
@@ -32,14 +44,28 @@ const SignIn = () =>{
             dispatch(singIn(formData,history));
         }
     }
+
+    /**
+     * on text field value change
+     * @param e
+     */
     const onchange =(e)=>{
         setFormData({...formData,[e.target.name]:e.target.value});
     }
+
+    /**
+     * switch form mode sign in and sign up
+     */
     const swichText =()=>{
         setSignUp((prvIsSignUp)=>!prvIsSignUp);
         setShowpassword(false);
     }
 
+    /**
+     * google button function when success
+     * @param res
+     * @returns {Promise<void>}
+     */
     const googleSuccess = async (res)=>{
 
         const result = res?.profileObj;
@@ -67,6 +93,11 @@ const SignIn = () =>{
             console.log(e);
         }
     }
+
+    /**
+     * google button function when fail
+     * @param error
+     */
     const  googleFailure=(error)=>{
         console.error(error);
         console.log('Google sign in fail. Try again');
@@ -75,7 +106,7 @@ const SignIn = () =>{
     return (
         <Container component="main" className="container"   maxWidth="md">
 
-                <Paper className={classes.paper} maxWidth="xs" elevation={3}>
+                <Paper className={classes.paper} maxWidth="mdx" elevation={3}>
 
                     <div >
                         <Avatar className={classes.avatar}>

@@ -3,6 +3,12 @@ import * as api from"../api/index"
 import {AUTH} from "../Constants/userConst";
 import authReducer from "../reducers/auth";
 
+/**
+ * sign in action
+ * @param formData
+ * @param history
+ * @returns {function(...[*]=)}
+ */
 export const singIn =(formData,history)=>async (dispatch)=>{
     try {
         console.log(formData);
@@ -14,6 +20,13 @@ export const singIn =(formData,history)=>async (dispatch)=>{
         console.log(e);
     }
 }
+
+/**
+ * sign up action
+ * @param formData
+ * @param history
+ * @returns {function(...[*]=)}
+ */
 export const singUp =(formData,history)=>async (dispatch)=>{
     try {
         const {data} = await api.signUp(formData);
