@@ -49,10 +49,14 @@ const Navbar = () =>{   const cart = useSelector(state => state.cart);
                                 <Button component={Link} to="/" className={classes.navBtn}>
                                     Home
                                 </Button>
-                                <Button component={Link} to="/seller" className={classes.navBtn}>
-                                    Sellers
-                                </Button>
-                                  <Avatar className={classes.purple} alt={user.result.name} src={user.result.imageUrl}></Avatar>
+                                {user.result.type=="seller" &&
+                                    (
+                                        <Button component={Link} to="/seller" className={classes.navBtn}>
+                                            Sellers
+                                        </Button>
+                                    )}
+
+                                  <Avatar className={classes.purple} alt={user.result.name} src={user.result.imageUrl}>{user.result.name.charAt(0)}</Avatar>
                                 <Typography className={classes.userName} variant="h8"> {user.result.name}</Typography>
                                <div className="cart_Link">
                                 <Link to="/cart" >

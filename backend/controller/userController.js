@@ -24,7 +24,7 @@ const signin =async (req,res)=>{
     }
 }
 const signup =async (req,res)=>{
-    const {email,password,conPass,firstName,lastName} =req.body;
+    const {email,password,conPass,firstName,lastName,type} =req.body;
     const name = firstName + " " + lastName;
     try{
 
@@ -34,8 +34,8 @@ const signup =async (req,res)=>{
         if(password !== conPass) return  res.status(404).json({message:"password miss match"});
 
         const hashpassword  = await  bcrypt.hash(password,12);
-        const result = await User.create({email,password:hashpassword,name:name });
-
+        const result = await User.create({email,password:hashpassword,name:name,type:type });
+        console.log("user : " +email + password + conPass + firstName + lastName +type);
         const token = jwt.sign({email: result.email,id:result.id},'test',{expiresIn:'1h'});
         res.status(200).json({result,token});
 
