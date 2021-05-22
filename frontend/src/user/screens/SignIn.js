@@ -84,11 +84,17 @@ const SignIn = () =>{
                         <Typography variant="h5">{isSignUp ? 'Sign Up' : 'Sign In'}</Typography>
                      </div>
                     <form className={classes.form} onSubmit={onSubmit}>
-                        <label className="user-label">Select user type:</label>
-                        <Select name="type" className="user-select" autoFocus required onChange={onchange}>
-                            <option value="customer">Customer</option>
-                            <option value="seller">Seller</option>
-                        </Select>
+
+                        {
+                            isSignUp &&(
+                                <>
+                                    <label className="user-label">Select user type:</label>
+                                    <Select name="type" className="user-select" autoFocus required onChange={onchange}>
+                                        <option value="customer">Customer</option>
+                                        <option value="seller">Seller</option>
+                                    </Select>
+                                </>
+                            )}
                         <Grid container spacing={2}>
                             {
                                 isSignUp &&(

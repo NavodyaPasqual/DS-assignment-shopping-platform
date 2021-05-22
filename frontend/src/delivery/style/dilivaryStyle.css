@@ -1,3 +1,25 @@
 .deli-container{
     margin-top:125px;
 }
+.form-item{
+    margin: 10px 10% 15px;
+    width: 80%;
+}
+.form-heading{
+    text-align: center;
+    margin: 30px 10px 30px 10px;
+}
+.paper{
+    padding: 20px 10px 10px 10px;
+    display: flex;
+
+}
+.left-content{
+    width: 60%;
+    border: #619686 3px solid;
+    padding: 10px 0px 10px 0px;
+    margin-right: 10px;
+}
+.right-content{
+    width: 40%;
+}
