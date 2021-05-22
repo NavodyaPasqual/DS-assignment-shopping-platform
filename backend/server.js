@@ -9,9 +9,10 @@ const app = express();
 app.use(express.json());
 
 app.use(cors(corsOp));
-//impdasdort routes
+//import routes
 const productRoute = require("./routes/productRoute");
 const userRouter = require('./routes/userRoutes');
+const deliveryRouter = require('./routes/deliveryRoutes');
 
 
 
@@ -21,6 +22,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/products",productRoute);
 app.use('/user',userRouter);
+app.use('/delivery',deliveryRouter);
 
 const PORT = process.env.PORT || 5000;
 

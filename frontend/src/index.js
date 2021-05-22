@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux'
 import store from "./cart/functions/store"
 import auth from"./user/reducers/auth";
+import delivery from "./delivery/reducer/diliveryReducer"
 
 
 ReactDOM.render(

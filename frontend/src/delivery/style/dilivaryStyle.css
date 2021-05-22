@@ -23,3 +23,13 @@
 .right-content{
     width: 40%;
 }
+.submit-wrap{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    margin-left: 25%;
+}
+.submit{
+    background-color: #388674;
+
+}

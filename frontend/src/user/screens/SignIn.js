@@ -11,6 +11,10 @@ import {useDispatch} from "react-redux";
 import {singIn,singUp} from "../action/auth.js";
 import authReducer from "../reducers/auth";
 
+/**
+ * inisial form input state
+ * @type {{firstName: string, lastName: string, password: string, conPass: string, type: string, email: string}}
+ */
 const initialState ={type:'',firstName:'',lastName:'',email:'',password:'',conPass:''};
 
 
@@ -20,15 +24,25 @@ const initialState ={type:'',firstName:'',lastName:'',email:'',password:'',conPa
  * @constructor
  */
 const SignIn = () =>{
-    //style
+
+    /**
+     * import variable
+     * @type {*}
+     */
     const classes = AuthStyle();
-    //states
-    const [showPassword,setShowpassword]= useState(false);
-    const [isSignUp,setSignUp] =useState(false)
-    const [formData,setFormData]=useState(initialState);
     const dispatch = useDispatch();
     const history = useHistory();
 
+    /**
+     * states
+     */
+    const [showPassword,setShowpassword]= useState(false);
+    const [isSignUp,setSignUp] =useState(false)
+    const [formData,setFormData]=useState(initialState);
+
+    /**
+     * password visibility togle
+     */
     const handleShowPass =()=> setShowpassword((prevShowPass) =>!prevShowPass);
 
     /**
