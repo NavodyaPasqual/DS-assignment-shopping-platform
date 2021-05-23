@@ -1,3 +1,5 @@
+
+
 const express = require("express");
 const router = express.Router();
 
@@ -7,7 +9,7 @@ const {
 } = require("../controller/productController");
 
 //GET all products from db
-router.get("/", getProducts);
+router.get("/",getProducts);
 //GET a product by id
 router.get("/:id", getProductById);
 
