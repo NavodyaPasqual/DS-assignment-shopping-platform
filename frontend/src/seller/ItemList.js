@@ -79,7 +79,7 @@ class ItemList extends Component{
                         }
 
                         </tbody>
-                    </Table> 
+                    </Table>
             </div>
             </div>
         );
