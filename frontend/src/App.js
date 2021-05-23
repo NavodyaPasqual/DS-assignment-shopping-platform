@@ -14,10 +14,16 @@ import SearchScreen from "./cart/screens/SearchScreen"
 import Search from "./cart/components/Search"
 import ItemList from "./seller/ItemList";
 import AddItem from "./seller/AddItem";
-import PaymentScreen from "./payment/screens/PaymentScreen"
 import PayPalPayment from "./payment/screens/PayPalPayment";
 import StripPay from "./payment/screens/Stripe";
 import MobilePayment from "./payment/screens/MobilePayment";
+
+/**
+ * main app routes
+ * @returns {*}
+ * @constructor
+ */
+
 function App() {
   return (
       <Router>
@@ -38,16 +44,17 @@ function App() {
               <Route path="/search/name/:name?" component={SearchScreen} exact/>
               <Route path="/search/category/:category" component={SearchScreen} exact/>
               <Route path="/search/category/:category/name/:name" component={SearchScreen} exact/>
+              <Route exact path="/payment" component={PaymentScreen}/>
+              <Route exact path="/stripepayment" component={StripPay}/>
+              <Route exact path="/mobilepayment" component={MobilePayment}/>
+              <Route exact path="/paypalpayment" component={PayPalPayment}/>
           </Switch>
         </main>
       </Router>
              // <ItemNavigation/>
 
   );
-                    <Route exact path="/payment" component={PaymentScreen}/>
-                    <Route exact path="/stripepayment" component={StripPay}/>
-                    <Route exact path="/mobilepayment" component={MobilePayment}/>
-                    <Route exact path="/paypalpayment" component={PayPalPayment}/>
+
 }
 
 export default App;

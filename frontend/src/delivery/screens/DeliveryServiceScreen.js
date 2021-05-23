@@ -94,7 +94,7 @@ const DeliveryServiceScreen = () =>{
                            <input type="hidden"  name="items" value={getCartCount()}     defaultValue={onchange} required/>
                            <input type="hidden"  name="amount" value={getCartSubTotal().toFixed(2)}   fullWidth="100%"   onChange={onchange}/>
                        <div className="submit-wrap">
-                           <Button variant="contained" color="secondary" type="submit"  onClick={onSubmit}>Proceed To checkout</Button>
+                           <Button variant="contained" color="secondary" component={Link} to={'/payment'} type="submit"  >Proceed To checkout</Button>
                        </div>
                       </form>
                </div>

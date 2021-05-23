@@ -9,6 +9,7 @@ const OPTIONS = {
     iconStyle: "solid",
     style : {
         base : {
+            marginTop: "150px",
             iconColor: "#00FFFF",
             color: "#fff",
             fontWeight: 500,
@@ -62,7 +63,7 @@ export default function StripePayment() {
         }
     }
     return (
-        <div>
+        <div className="payment-container">
             <div className="row top">
                 <div className="col-2">
                     <ul>

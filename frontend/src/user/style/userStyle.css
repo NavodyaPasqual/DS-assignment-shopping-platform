@@ -114,3 +114,11 @@ user-select:hover{
      width: 60%;
      margin: 150px 20%;
  }
+ .payment-container{
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: contain;
+     width: 500px;
+     height: 350px;
+     margin-top: 125px;
+ }

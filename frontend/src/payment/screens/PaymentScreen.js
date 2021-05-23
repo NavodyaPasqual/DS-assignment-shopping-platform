@@ -25,7 +25,7 @@ const PaymentScreen = (props) => {
     };
 
     return (
-        <div>
+        <div className="payment-container">
             <form className="form-group" onSubmit={submitHandler}>
                 <div className="cardd cardd-body">
                     <div>
