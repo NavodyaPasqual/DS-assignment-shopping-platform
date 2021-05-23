@@ -1,6 +1,7 @@
 import './HomeScreen.css';
-import { useEffect } from "react";
+import { useState,useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import Search from "../components/Search";
 
 import Product from "../components/Product";
 import { getProducts as listProducts } from "../functions/actions/productActions";
@@ -16,7 +17,7 @@ const HomeScreen = () =>{
 
     return (
         <div className="homeScreen">
-            <h2 className="mainTitle">Latest Products</h2>
+            <h2 className="mainTitle">Quick and hassle-free shopping</h2>
             <div className="homeScreenProducts">
                 {loading ? (
                     <div className="overlay">

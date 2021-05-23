@@ -1,40 +1,40 @@
 .product {
     width: 330px;
-    padding: 1rem;
     background: #fff;
     cursor: pointer;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-    margin: 20px auto;
     display: flex;
-    flex-direction: column;
+    padding: 1rem;
+    margin: 20px auto;
     justify-content: space-around;
     flex-direction: column;
 }
 .product > img {
     width: 100%;
-    height: 210px;
     object-fit: contain;
+    height: 210px;
     border-radius: 8px;
 }
 .productInfo > p {
-    margin: 5px 10px;
     line-height: 1.3;
+    margin: 5px 10px;
 }
 
 .infoDescription {
-    text-align: justify;
     font-size: large;
+    text-align: justify;
 }
 
 .infoPrice {
-    font-weight: bold;
     color: red;
+    font-weight: bold;
+
 }
 .infoName {
     color: #388674;
-    font-size: 1.3rem;
-    letter-spacing: 1px;
     overflow: hidden;
+    letter-spacing: 1px;
+    font-size: 1.3rem;
     font-weight: bold;
 }
 .infoDescription {
@@ -42,18 +42,18 @@
 }
 .infoButton {
     display: block;
-    text-decoration: none;
-    text-align: center;
     color: #ffffff;
-    width: 100%;
+    text-decoration: none;
     padding: 8px 16px;
+    width: 100%;
     background-color: #388674;
+    text-align: center;
     font-size: 1.3rem;
 }
 
 .infoButton:hover {
-    background: #45a28d;
     color: #f4f4f4;
+    background: #45a28d;
 }
 @media (max-width: 1232px) {
     .product {
