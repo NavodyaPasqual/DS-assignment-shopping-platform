@@ -1,4 +1,4 @@
- import * as actionTypes from "../constants/cartConstants";
+import * as actionTypes from "../constants/cartConstants";
 import axios from "axios";
 
 export const addToCart = (id, qty) => async (dispatch,getState) => {
@@ -26,4 +26,11 @@ export const removeFromCart = (id) => (dispatch, getState) => {
     });
 
     localStorage.setItem('cart', JSON.stringify(getState().cart.cartItems));
+};
+
+export const saveMethod = (data) => (dispatch) => {
+    dispatch({
+        type: actionTypes.SAVE_PAYMENT_METHOD,
+        payload:data,
+    });
 };
