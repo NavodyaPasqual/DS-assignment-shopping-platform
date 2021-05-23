@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap";
 
 function AddItem() {
 
@@ -22,7 +24,7 @@ function AddItem() {
             count
         }
         console.log(newItem);
-        axios.post("http://localhost:5000/item/add",newItem).then(() => {
+        axios.post("http://localhost:5000/item/addItem",newItem).then(() => {
             alert("item added");
         }).catch((err) =>{
             alert(err);
@@ -31,7 +33,7 @@ function AddItem() {
 
 
     return(
-        <div className= "container">
+        <div className= " add-con">
             <h2>Add Item</h2>
             <form onSubmit={addData}>
 

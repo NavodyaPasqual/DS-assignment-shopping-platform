@@ -3,7 +3,7 @@ const router = express.Router();
 let Item = require("../models/Item");
 
 //create
-router.route("/add").post((req, res) => {
+router.route("/addItem").post((req, res) => {
     const itemNo = req.body.itemNo;
     const itemCategory = req.body.itemCategory;
     const itemName = req.body.itemName;
@@ -18,7 +18,7 @@ router.route("/add").post((req, res) => {
         itemDescription,
         itemPrice,
         countStock
-    })
+    }) ;
     newItem.save().then(()=>{
         res.json("Item Added");
     }).catch((err)=>{
@@ -28,7 +28,7 @@ router.route("/add").post((req, res) => {
 
 
 //get
-router.route("/").get((req, res) => {
+router.route("/itemList").get((req, res) => {
     Item.find().then((items)=>{
         res.json(items)
     }).catch((err)=>{

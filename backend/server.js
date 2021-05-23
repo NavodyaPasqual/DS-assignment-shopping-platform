@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const connectDB = require("./config/db");
-const cors = require('cors');
+const cors = require("cors");
 var corsOp= {};
 
 connectDB();
@@ -14,7 +14,7 @@ const productRoute = require("./routes/productRoute");
 const userRouter = require('./routes/userRoutes');
 const deliveryRouter = require('./routes/deliveryRoutes');
 const itemRoute = require('./routes/itemRoute');//for item
-app.use('/item',itemRoute);// for item
+
 
 
 
@@ -25,6 +25,7 @@ app.get("/", (req, res) => {
 app.use("/api/products",productRoute);
 app.use('/user',userRouter);
 app.use('/delivery',deliveryRouter);
+app.use('/item',itemRoute);// for item
 
 const PORT = process.env.PORT || 5000;
 

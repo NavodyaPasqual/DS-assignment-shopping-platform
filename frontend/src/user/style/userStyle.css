@@ -88,3 +88,29 @@ user-select:hover{
     color: #706f6f;
     margin-bottom: 5px;
 }
+.container-seller{
+    margin-top: 150px;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    border: #388674 1px solid;
+    padding: 10px 10px 30px 10px;
+    box-shadow: #706f6f 2px 2px 3px;
+}
+.table{
+    width: 100%;
+
+}
+
+.btn-wrap{
+    display: flex;
+    width: 150px;
+    justify-items: flex-end;
+    align-items: flex-end;
+    margin-right: 10%;
+    margin-left: 80%;
+}
+ .add-con{
+     width: 60%;
+     margin: 150px 20%;
+ }
