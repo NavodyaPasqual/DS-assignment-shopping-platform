@@ -101,7 +101,8 @@ const MobilePayment = () => {
         setValues({...values, error: false})
         pay({name, email, mobileno, nationalid})
             .then(data => {
-                if (data.error) {
+                console.log(error);
+                if (error) {
                     setValues({...values, error: data.error, success: false})
                 } else {
 

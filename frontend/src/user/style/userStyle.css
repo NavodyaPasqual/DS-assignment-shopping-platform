@@ -90,17 +90,9 @@ user-select:hover{
 }
 .container-seller{
     margin-top: 150px;
-    margin-left: 10%;
-    margin-right: 10%;
-    width: 80%;
-    border: #388674 1px solid;
-    padding: 10px 10px 30px 10px;
     box-shadow: #706f6f 2px 2px 3px;
 }
-.table{
-    width: 100%;
 
-}
 
 .btn-wrap{
     display: flex;

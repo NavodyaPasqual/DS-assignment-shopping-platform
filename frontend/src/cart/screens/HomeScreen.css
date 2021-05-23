@@ -1,6 +1,6 @@
 .homeScreen {
     max-width: 1300px;
-    margin: 1rem auto;
+    margin-top: 150px;
 }
 
 .mainTitle {
@@ -9,6 +9,9 @@
     margin-bottom: 1rem;
     margin-left: 8px;
     font-family: "Century Schoolbook";
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 2px 2px 6px #171717;
 }
 
 .loadingImg {

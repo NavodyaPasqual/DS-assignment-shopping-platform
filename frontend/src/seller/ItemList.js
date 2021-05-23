@@ -41,9 +41,8 @@ class ItemList extends Component{
                 <div className="btn-wrap">
                     <Button component={Link} classNaame="btn-add" to={'/addItem'} variant="outlined" color="primary">Add new Item</Button>
                 </div>
-                <Card style={{alignContent: 'center', width: '30cm', paddingLeft: "5.5m"}}>
                     <br/>
-                    <Table className="table table-striped table-hover table-dark table-bordered" striped border hover>
+                    <Table className="table table-striped  table-responsive table-success" striped border hover>
                         <thead>
                         <tr>
                             <th>Item No</th>
@@ -80,8 +79,7 @@ class ItemList extends Component{
                         }
 
                         </tbody>
-                    </Table>
-                </Card>
+                    </Table> 
             </div>
             </div>
         );
