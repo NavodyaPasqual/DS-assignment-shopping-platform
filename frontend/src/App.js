@@ -34,6 +34,9 @@ function App() {
           </Switch>
         </main>
       </Router>
+              <ItemNavigation/>
+              <Route path="/add" exact component={AddItem}/>
+              <Route path="/" exact component={ItemList}/>
   );
 }
 

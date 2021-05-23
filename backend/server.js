@@ -13,6 +13,8 @@ app.use(cors(corsOp));
 const productRoute = require("./routes/productRoute");
 const userRouter = require('./routes/userRoutes');
 const deliveryRouter = require('./routes/deliveryRoutes');
+const itemRoute = require('./routes/itemRoute');//for item
+app.use('/item',itemRoute);// for item
 
 
 
