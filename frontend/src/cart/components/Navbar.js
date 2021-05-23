@@ -1,11 +1,10 @@
 import './Navbar.css';
-import {Link} from 'react-router-dom'
 import {useSelector} from "react-redux";
 import {AppBar,Avatar,Typography,Toolbar,Button} from "@material-ui/core";
 import React,{useState,useEffect} from "react";
 import navStyle from "../../user/style/navStyle";
 import {useDispatch} from "react-redux";
-import {useHistory,useLocation ,Link} from "react-router-dom";
+import {useHistory,useLocation ,Link,Route} from "react-router-dom";
 import authReducer from "../../user/reducers/auth";
 import Search from '../components/Search'
 
@@ -41,10 +40,7 @@ const Navbar = () =>{   const cart = useSelector(state => state.cart);
 
                 Shopping Platform
             </Typography>
-        <nav className="navbar">
-            <ul className="nav_Logo">
-                <li><Link to="/">Shopping Platform</Link></li>
-            </ul>
+        <div >
             <ul className="search">
                 <li>
                     <Route render={({ history }) => (
@@ -53,8 +49,7 @@ const Navbar = () =>{   const cart = useSelector(state => state.cart);
                     ></Route>
                 </li>
             </ul>
-            <ul className="nav_links">
-
+        </div>
                 <Toolbar className={classes.toolbar}>
 
 
