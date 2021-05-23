@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap";
@@ -12,17 +12,30 @@ function AddItem() {
     const [price, setPrice] = useState("");
     const [count, setCount] = useState("");
 
+    const localUser = JSON.parse(localStorage.getItem('UserProfile')) || null;
+    let [user,setUser] = useState(localUser);
+
+
+    useEffect(()=>{
+        const token = user?.token;
+        setUser(JSON.parse(localStorage.getItem('UserProfile')));
+        console.log("data " +user);
+
+    },[]);
+
     //setting add function
     function addData(e) {
         e.preventDefault();
+        const id = user.result._id;
         const newItem ={
+            id,
             no,
             category,
             name,
             description,
             price,
             count
-        }
+        };
         console.log(newItem);
         axios.post("http://localhost:5000/item/addItem",newItem).then(() => {
             alert("item added");

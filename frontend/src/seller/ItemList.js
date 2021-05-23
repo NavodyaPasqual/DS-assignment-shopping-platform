@@ -28,6 +28,7 @@ class ItemList extends Component{
     componentDidMount() {
         ItemService.getItem().then((res) => {
             this.setState({item: res.data});
+            console.log(res.data);
         });
     }
 

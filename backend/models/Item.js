@@ -26,6 +26,10 @@ const itemSchema = new Schema({
         type: Number,
         required: true
     },
+    userId: {
+        type: String,
+        required: true
+    },
 })
 
 const Item = mongoose.model("Item", itemSchema);
