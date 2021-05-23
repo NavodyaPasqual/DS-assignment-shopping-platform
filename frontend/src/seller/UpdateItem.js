@@ -3,7 +3,6 @@ import {Jumbotron, Form, Col} from 'react-bootstrap';
 import ItemService from "./ItemService";
 import axios from "axios";
 
-
 function UpdateItem(){
 
     const [no, setNo] = useState("");
