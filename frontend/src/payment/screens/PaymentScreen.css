@@ -1,0 +1,22 @@
+
+.cardd {
+    border: 0.1rem #c0c0c0 solid;
+    width: 28rem;
+    background-color: #f8f8f8;
+    margin-left: 34rem;
+    border-radius: 0.5rem;
+    margin-top: 5rem;
+}
+.cardd-body {
+    padding: 3rem;
+}
+.cardd-body > * {
+    margin-bottom: 0.5rem;
+}
+
+.btnn {
+    margin-left: 8rem;
+}
+h2  {
+    color: darkcyan;
+}

@@ -60,6 +60,8 @@ const signup =async (req,res)=>{
         //create user
         const result = await User.create({email,password:hashpassword,name:name,type:type });
         console.log("user : " +email + password + conPass + firstName + lastName +type);
+
+        //create jwt token
         const token = jwt.sign({email: result.email,id:result.id},process.env.USERSTRING,{expiresIn:'1h'});
         res.status(200).json({result,token});
 

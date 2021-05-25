@@ -6,7 +6,7 @@ import navStyle from "../../user/style/navStyle";
 import {useDispatch} from "react-redux";
 import {useHistory,useLocation ,Link,Route} from "react-router-dom";
 import authReducer from "../../user/reducers/auth";
-import Search from '../components/Search'
+import Search from '../components/Search';
 
 const Navbar = () =>{   const cart = useSelector(state => state.cart);
     const {cartItems} = cart;

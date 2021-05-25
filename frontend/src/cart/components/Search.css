@@ -1,19 +1,20 @@
 .row input{
     height: 36px;
-    width: 90%;
+    width: 100%;
     border: none;
     outline: none;
     font-size: 18px;
-    box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
-    padding: 0 60px 0 20px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    padding: 0 60px 0 10px;
     border-radius: 5px 0px 0px 5px;
 }
 
 .searchButton {
-    height: 36px;
+    height: 100%;
     background: #56c1a8;
     outline: none;
     border: none;
-    width: 29px;
+    width: 50px;
     border-radius: 0px 5px 5px 0px;
+    box-shadow: 2px 2px 5px rgba(256,0,0,0.1);
 }

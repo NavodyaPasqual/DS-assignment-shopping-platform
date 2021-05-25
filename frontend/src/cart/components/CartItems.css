@@ -8,6 +8,7 @@
     border-radius: 1px;
     place-items: center;
     margin-bottom: 8px;
+    border-radius: 5px;
 }
 
 .cartItemsName {
@@ -30,9 +31,11 @@
 
 .cartItemDelete {
     padding: 10px 17px;
+    outline: none;
+    border: 0px;
+    border-radius: 5px;
     color: red;
     cursor: pointer;
-    border: 1px solid #171717;
     background: #f4f4f4;
     transition: all 0.3s ease-out;
 }

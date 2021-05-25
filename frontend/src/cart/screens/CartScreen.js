@@ -22,33 +22,36 @@ const CartScreen = () =>{
         return cartItems.reduce((price,item) => (item.price * item.qty) + price,0)
     };
     return (
-        <div className="cartScreen">
-            <div className="cartScreenLeft">
-                <h2>Shopping Cart</h2>
-                {cartItems.length === 0 ? (
-                    <div>
-                        Your cart is empty... <Link to="/">BACK TO SHOPPING</Link>
-                    </div>
-                ) : (cartItems.map((item) => (
-                    <CartItems
-                        key = {item.product}
-                        item={item}
-                        qtyChangeHandler={qtyChangeHandler}
-                        removeHandler={removeFromCartHandler}/>
-                )))}
-            </div>
-            <div className="cartScreenRight">
-                <div className="cartScreenInfo">
-                    <p>You have {getCartCount()} items in cart</p>
-                    <p>Total: ${getCartSubTotal().toFixed(2)}</p>
+        <div className="cart-container">
+            <div className="cartScreen">
+                <div className="cartScreenLeft">
+                    <h2>Shopping Cart</h2>
+                    {cartItems.length === 0 ? (
+                        <div>
+                            Your cart is empty... <Link to="/">BACK TO SHOPPING</Link>
+                        </div>
+                    ) : (cartItems.map((item) => (
+                        <CartItems
+                            key = {item.product}
+                            item={item}
+                            qtyChangeHandler={qtyChangeHandler}
+                            removeHandler={removeFromCartHandler}/>
+                    )))}
                 </div>
-                <div>
-                    <Link to="/checkout">
-                        <button>Proceed To checkout</button>
-                    </Link>
+                <div className="cartScreenRight">
+                    <div className="cartScreenInfo">
+                        <p>You have {getCartCount()} items in cart</p>
+                        <p>Total: ${getCartSubTotal().toFixed(2)}</p>
+                    </div>
+                    <div>
+                        <Link to="/checkout">
+                            <button>Proceed To checkout</button>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>
+
 
     )
 }

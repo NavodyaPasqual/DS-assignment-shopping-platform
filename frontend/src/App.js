@@ -7,11 +7,22 @@ import ProductScreen from "./cart/screens/ProductScreen";
 import SignUp from "./user/screens/SignUp"
 import SignIn from "./user/screens/SignIn"
 import Navbar from "./cart/components/Navbar";
-import SellerHomeScreen from "./seller/screens/SellerHomeScreen";
+import SellerHomeScreen from "./seller/ItemList";
 import DeliveryServiceScreen from "./delivery/screens/DeliveryServiceScreen"
 import PaymentScreen from "./payment/screens/PaymentScreen"
 import SearchScreen from "./cart/screens/SearchScreen"
 import Search from "./cart/components/Search"
+import ItemList from "./seller/ItemList";
+import AddItem from "./seller/AddItem";
+import PayPalPayment from "./payment/screens/PayPalPayment";
+import StripPay from "./payment/screens/Stripe";
+import MobilePayment from "./payment/screens/MobilePayment";
+
+/**
+ * main app routes
+ * @returns {*}
+ * @constructor
+ */
 
 function App() {
   return (
@@ -28,13 +39,22 @@ function App() {
               <Route exact path="/checkout" component={DeliveryServiceScreen}/>
               <Route exact path="/payment" component={PaymentScreen}/>
               <Route exact path="/history" component={SearchScreen}/>
-              <Route path="/search/name/:name?" component={SearchScreen} exact></Route>
-              <Route path="/search/category/:category" component={SearchScreen} exact></Route>
-              <Route path="/search/category/:category/name/:name" component={SearchScreen} exact></Route>
+              <Route path="/addItem" exact component={AddItem}/>
+              <Route path="/itemList" exact component={ItemList}/>
+              <Route path="/search/name/:name?" component={SearchScreen} exact/>
+              <Route path="/search/category/:category" component={SearchScreen} exact/>
+              <Route path="/search/category/:category/name/:name" component={SearchScreen} exact/>
+              <Route exact path="/payment" component={PaymentScreen}/>
+              <Route exact path="/stripepayment" component={StripPay}/>
+              <Route exact path="/mobilepayment" component={MobilePayment}/>
+              <Route exact path="/paypalpayment" component={PayPalPayment}/>
           </Switch>
         </main>
       </Router>
+             // <ItemNavigation/>
+
   );
+
 }
 
 export default App;
